@@ -5,14 +5,14 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 function App() {
 
   let saludo = { msj:"Hola Mundo" };
-  function textoLog(a) {
-    console.log(a)
+  function textAlert(a) {
+    alert(a)
   }
 
   return (
     <>
       <NavBar />
-      <ItemListContainer item = {saludo} color={"blue"} textoLog={textoLog}/>
+      <ItemListContainer item = {saludo} color={"blue"} textAlert={textAlert}/>
     </>
   );
 }
