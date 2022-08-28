@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-export default function ItemListContainer({ item, color, textAlert }) {
-    textAlert("function para practicar")
+export default function ItemListContainer({ item, color, textLog }) {
+    textLog("function para practicar")
     return (
         <div style={{color:color, textAlign:"center"}}>
             <h1>{item.msj}</h1>
