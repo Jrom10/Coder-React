@@ -9,10 +9,18 @@ function App() {
     alert(info)
   }
 
+  const sumar = (a, b) => {
+    return (a + b )
+  }
+
+  const restar = (a, b) => {
+    return (a - b);
+  }
+
   return (
     <>
       <NavBar />
-      <ItemCount initial = {1} stock = {10} onAdd = {onAdd}/>
+      <ItemCount initial = {1} stock = {10} onAdd = {onAdd} sumar={sumar} restar={restar}/>
       <ItemListContainer/>
     </>
   );

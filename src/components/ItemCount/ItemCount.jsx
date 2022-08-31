@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-export default function ItemCount ({stock, initial, onAdd}) {
+export default function ItemCount ({stock, initial, onAdd, sumar, restar}) {
 
     const [contador, setContador] = useState(initial)
 
@@ -15,7 +15,7 @@ export default function ItemCount ({stock, initial, onAdd}) {
             <button
             disabled = { contador === stock}
             onClick={() => {
-                setContador(contador + 1)
+                setContador(sumar(contador, 1))
             }}
             >
                 Sumar
@@ -23,7 +23,7 @@ export default function ItemCount ({stock, initial, onAdd}) {
             <button
             disabled = { contador === 1}
             onClick={() => {
-                setContador(contador - 1)
+                setContador(restar(contador, 1))
             }}
             >
                 Restar
