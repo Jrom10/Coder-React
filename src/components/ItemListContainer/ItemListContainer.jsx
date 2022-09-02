@@ -10,9 +10,9 @@ export default function New () {
         let PromesaNew = new Promise ((res, rej) => {
             setTimeout(() => {
                 res([
-                    {id: 10, name: `Nike`, price: 200},
-                    {id: 11, name: `Adidas`, price: 300},
-                    {id: 12, name: `Puma`, price: 100},
+                    {id: 1, name: `Nike`, price: 200},
+                    {id: 2, name: `Adidas`, price: 300},
+                    {id: 3, name: `Puma`, price: 100},
                 ])
             }, 2000)
         })
