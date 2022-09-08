@@ -1,17 +1,12 @@
 import React, { useState, useEffect } from 'react'  
 import Item from './Item'
 
-export default function ItemList({prop, load, error}) {
-    
+export default function ItemList({productList}) {
     return (  
         <div>
-            <p>Loading: {load ? `Loading...` : `fin`}</p>
-            <p>Error: {error ? error : null}</p>
-            {prop.map((producto,index) => (
-                <div key={index}>
-                    <Item id = {producto.id} name = {producto.name} price = {producto.price}/>
-                </div>
-            ))}
+            <div className='cardContainer'>
+                {productList.map((product) => <Item product={product} key={product.id} /> )}
+            </div>
         </div>
     )
 }

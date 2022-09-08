@@ -1,15 +1,18 @@
-import { CatchingPokemon } from '@mui/icons-material';
 import React from 'react';
+import ItemCount from '../ItemCount/ItemCount';
 
-export default function FetchLayout({ prod }) {
+export default function ItemDetail({ prod }) {
+    const {name,description,price,stock} = prod
+    const onAdd =() => {
+        console.log("compraste");
+    }
+
     return (
-        <>
-            {prod.map((poke,index) => (
-                <div key={index} style={{textDecoration:"underline", background:"coral"}}>
-                    <p>nombre: {poke.name} </p>
-                    <p>URL: {poke.url} </p>
-                </div>
-            ))}
-        </>
+        <div style={{display:"flex", justifyContent:"center", alignItems:"center" , flexDirection:"column"}}>
+            <h2>{name}</h2>
+            <p>{description}</p>
+            <p>${price}</p>
+            <ItemCount stock={stock} initial={1} onAdd={onAdd}/>
+        </div>
     )
 }

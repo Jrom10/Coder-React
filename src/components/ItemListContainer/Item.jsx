@@ -1,14 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
+export default function Item ({product}) {
 
-export default function Item({id, name, price}) {
+    const {name, id, price, stock, description} = product
+    const navegar = useNavigate()
+
     return (
-        <div style={{textAlign:"center" , border:"1px solid blue", margin:"10px"}}>
-            <p>Nombre: {name}</p>
-            <p>Id: {id}</p>
-            <p>Precio: ${price}</p>
+        <div className='card' style={{width:"20rem", margin:".5rem"}}>
+            <div>
+                <p>Nombre: {name}</p>
+                <p>Id: {id}</p>
+                <p>Precio: ${price}</p>
+                <p>descripcion: {description}</p>
+                <p>stock: {stock}</p>
+            </div>
+        
+            <button className='btn btn-primary' onClick={()=> navegar(`/product/${id}`)}> Ver más</button>
         </div>
     )
 }
-
 

@@ -1,37 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
+import { useParams } from 'react-router-dom';
+import {data} from "../../mocks/mockData"
 
-export default function New () {
-    const [loading, setLoading] = useState(true)
-    const [products, setProducts] = useState([])
-    const [error, setError] = useState('')
+export default function ItemListContainer() {
+    const [productList, setProductList]=useState([])
+    const [loading, setLoading]= useState(false)
+    const {categoryId} = useParams()
 
-    useEffect(() => {
-        let PromesaNew = new Promise ((res, rej) => {
-            setTimeout(() => {
-                res([
-                    {id: 1, name: `Nike`, price: 200},
-                    {id: 2, name: `Adidas`, price: 300},
-                    {id: 3, name: `Puma`, price: 100},
-                ])
-            }, 2000)
+useEffect(()=>{
+    setLoading(true)
+        data
+        .then((res)=>{
+            if(categoryId){
+            setProductList(res.filter((item)=> item.category === categoryId))
+            }else{
+            setProductList(res)
+            }
         })
-
-        PromesaNew
-            .then((res) => {
-                setProducts(res)
-            })
-            .catch((err) => {
-                setError(err)
-            })
-            .finally(() => {
-                setLoading(false)
-            })
-    }, [])
-
-    return(
+        .catch((error)=> console.log(error))
+        .finally(()=> setLoading(false))
+        }, [categoryId])
+    
+    
+        return (
         <div>
-            <ItemList prop = {products} load = {loading} error = {error}/>
+            {loading ? <p>Loading...</p>:<ItemList productList={productList}/>}
         </div>
-    )
-}
+        );
+    }

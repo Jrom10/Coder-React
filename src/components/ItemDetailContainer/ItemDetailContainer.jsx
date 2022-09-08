@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import ItemDetail from "./ItemDetail"
+import ItemDetail from "./ItemDetail";
+import { data } from '../../mocks/mockData';
+import { useParams } from 'react-router-dom';
 
-export default function FetchContainer() {
+export default function ItemDetailContainer() {
 
     const [prod, setProd] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const {productId} = useParams()
 
     useEffect(() => {
-        setTimeout(() => {
-            fetch('https://pokeapi.co/api/v2/pokemon?limit=1')
-            .then((res) => res.json())
-            .then((json) => {
-                setProd(json.results);
-            })
+            data
+            .then((res) => setProd(res.find((item)=> item.id === productId)))
             .catch((e) => console.log(e))
-            .finally(() => console.log('lo ultimo que hago'));
-        }, 2000);
-    }, []);
+            .finally(() => setLoading(false))
+    }, [productId]);
+
     
-    return <ItemDetail prod={prod}/>;
+    return (
+        <div>
+            {loading ? <p>Cargando...</p> : <ItemDetail prod={prod}/>}
+        </div> 
+    )
 }

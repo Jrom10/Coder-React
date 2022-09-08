@@ -1,39 +1,30 @@
-import React, { useState, useEffect } from 'react';
 
+import React, { useState } from 'react'
 
-export default function ItemCount ({stock, initial, onAdd, sumar, restar}) {
+export default function ItemCount ({initial, stock, onAdd}) {
+    const[count, setCount]= useState(initial)
 
-    const [contador, setContador] = useState(initial)
+    const restar = () => {
+        if(count > initial){
+            setCount(count-1)
+        }
+    }
 
-    useEffect(() => {
-        console.log("se monto por primera vez");
-    },[])
+    const sumar=()=>{
+        if(count<stock){
+            setCount(count + 1)
+        }
+    }
 
-    return ( 
-        <div>
-            <h2>contador : {contador} </h2>
-            <button
-            disabled = { contador === stock}
-            onClick={() => {
-                setContador(sumar(contador, 1))
-            }}
-            >
-                Sumar
-            </button>
-            <button
-            disabled = { contador === 1}
-            onClick={() => {
-                setContador(restar(contador, 1))
-            }}
-            >
-                Restar
-            </button>
-            <button
-            onClick={() => {
-                onAdd(`la cantidad de items seleccionada ha sido de ${contador}`)
-                }}
-            >Añadir
-            </button>
-        </div>
-    );
+    return (
+    <>
+    <div>
+        <button className='btn btn-success' onClick={restar}>-</button>
+        <span  className='btn btn-light'>{count}</span>
+        <button  className='btn btn-danger'onClick={sumar}>+</button>
+    </div>
+        <button  className='btn btn-primary m-3'onClick={onAdd}>comprar</button>
+    </>
+    )
 }
+
