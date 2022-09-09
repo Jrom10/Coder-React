@@ -31,9 +31,9 @@ export default function NavBar() {
                     LOGARDO
                 </Typography>
             </NavLink>
-            <div style={{display:"flex", justifyContent:"center", color:"white", textDecoration:"none"}}>
-                <Link to="/">HOME</Link>
-                <br />
+            <div >
+                {/* <Link to="/">HOME</Link>
+                <br /> */}
                 <Link to="/category/Futbol">Futbol</Link>
                 <br />
                 <Link to="/category/Boxeo">Boxeo</Link>
