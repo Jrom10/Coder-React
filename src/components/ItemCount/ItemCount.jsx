@@ -1,8 +1,5 @@
 
-import React, { useState } from 'react'
-
-export default function ItemCount ({initial, stock, onAdd}) {
-    const[count, setCount]= useState(initial)
+export default function ItemCount ({initial, stock, onAdd, count, setCount}) {
 
     const restar = () => {
         if(count > initial){
@@ -23,7 +20,7 @@ export default function ItemCount ({initial, stock, onAdd}) {
         <span  className='btn btn-light'>{count}</span>
         <button  className='btn btn-danger'onClick={sumar}>+</button>
     </div>
-        <button  className='btn btn-primary m-3'onClick={onAdd}>comprar</button>
+        <button  className='btn btn-primary m-3'onClick={()=>onAdd(count)}>comprar</button>
     </>
     )
 }

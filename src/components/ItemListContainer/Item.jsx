@@ -10,10 +10,9 @@ export default function Item ({product}) {
         <div className='card' style={{width:"20rem", margin:".5rem"}}>
             <div>
                 <p>Nombre: {name}</p>
-                <p>Id: {id}</p>
-                <p>Precio: ${price}</p>
                 <p>descripcion: {description}</p>
                 <p>stock: {stock}</p>
+                <p>Precio: ${price}</p>
             </div>
         
             <button className='btn btn-primary' onClick={()=> navegar(`/product/${id}`)}> Ver más</button>
