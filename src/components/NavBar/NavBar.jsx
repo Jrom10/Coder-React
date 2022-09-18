@@ -43,7 +43,9 @@ export default function NavBar() {
                 <Link to="/product/01">Producto Destacado</Link>
                 <br />
             </div>
+            <NavLink to='/cart'>
             <CartWidget/>
+            </NavLink>
             </Toolbar>
         </Container>
         </AppBar>
