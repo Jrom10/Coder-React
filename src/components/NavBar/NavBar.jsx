@@ -32,15 +32,11 @@ export default function NavBar() {
                 </Typography>
             </NavLink>
             <div >
-                {/* <Link to="/">HOME</Link>
-                <br /> */}
                 <Link to="/category/Futbol">Futbol</Link>
                 <br />
                 <Link to="/category/Boxeo">Boxeo</Link>
                 <br />
                 <Link to="/Category/Karate">Karate</Link>
-                <br />
-                <Link to="/product/01">Producto Destacado</Link>
                 <br />
             </div>
             <NavLink to='/cart'>
