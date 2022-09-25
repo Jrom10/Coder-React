@@ -20,7 +20,7 @@ function Cart() {
                         {cart.map((compra) => <CartItem key={compra.id} compra={compra}/>)}
                     <span>Total a pagar : ${cartTotal()}</span><br />
                     <button onClick={clear}>Vaciar Carrito</button>
-                    <button>Terminar Compra</button>
+                    <button onClick={()=>navegar('/checkout')}>Terminar Compra</button>
                 </div>
             }
         </div>
