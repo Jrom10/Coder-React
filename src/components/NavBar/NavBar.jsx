@@ -38,6 +38,8 @@ export default function NavBar() {
                 <br />
                 <Link to="/Category/Karate">Karate</Link>
                 <br />
+                <Link to="/Category/Featured">Destacado</Link>
+                <br />
             </div>
             <NavLink to='/cart'>
             <CartWidget/>

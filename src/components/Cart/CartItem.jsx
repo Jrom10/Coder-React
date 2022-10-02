@@ -7,7 +7,7 @@ function CartItem({compra}) {
 
     return (
         <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', padding:'2rem'}}>
-            {/* <img src={compra.img} alt={compra.name}/> */}
+            <img style={{height:100}} src={compra.img} alt={compra.name}/>
             <span>{compra.name}</span>
             <span>{compra.quantity}</span>
             <span>${compra.price}</span>

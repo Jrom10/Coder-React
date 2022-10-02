@@ -7,12 +7,12 @@ export default function ItemDetail({ prod }) {
 
     const [count, setCount] = useState(1)
     const [compra, setCompra] = useState(false)
-    const {name,description,price,stock,id} = prod
+    const {name,description,price,stock,id,img} = prod
     const navegar = useNavigate()
     const {addItem} = useCart()
 
     const onAdd =() => {
-        let purchase ={ id, name, price, stock, quantity:count }
+        let purchase ={ id, name, price, stock, quantity:count, img }
         setCompra(true)
         addItem(purchase)
     }
@@ -20,6 +20,7 @@ export default function ItemDetail({ prod }) {
     return (
         <div style={{display:"flex", justifyContent:"center", alignItems:"center" , flexDirection:"column"}}>
             <h2>{name}</h2>
+            <img style={{height:"15rem"}} src={img} alt={name} />
             <p>{description}</p>
             <p>${price}</p>
             { !compra ?

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
-import {data} from "../../mocks/mockData"
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { db } from "../../firebase/firebase"
 
@@ -27,22 +26,6 @@ export default function ItemListContainer() {
         .catch ((error)=>console.log(error))
         .finally(()=>setLoading(false))
     }, [categoryId])
-    
-
-// useEffect(()=>{
-//     setLoading(true)
-//         data
-//         .then((res)=>{
-//             if(categoryId){
-//             setProductList(res.filter((item)=> item.category === categoryId))
-//             }else{
-//             setProductList(res)
-//             }
-//         })
-//         .catch((error)=> console.log(error))
-//         .finally(()=> setLoading(false))
-//         }, [categoryId])
-    
     
         return (
         <div>

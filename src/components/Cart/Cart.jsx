@@ -16,7 +16,7 @@ function Cart() {
                     <button onClick={()=>navegar('/')}>Ir a comprar</button>
                 </div>
                 : <div>
-                    <h2>Tu Carrito</h2>
+                    <h2 style={{}}>Tu Carrito</h2>
                         {cart.map((compra) => <CartItem key={compra.id} compra={compra}/>)}
                     <span>Total a pagar : ${cartTotal()}</span><br />
                     <button onClick={clear}>Vaciar Carrito</button>
