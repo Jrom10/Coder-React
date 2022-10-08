@@ -19,8 +19,8 @@ export default function NavBar() {
                     variant="h6"
                     noWrap
                     sx={{
-                    mr: 2,
-                    display: { xs: 'none', md: 'flex' },
+                    mr: 30,
+                    display: { xs: 'none', md: 'flex'},
                     fontFamily: 'monospace',
                     fontWeight: 700,
                     letterSpacing: '.3rem',
@@ -28,17 +28,17 @@ export default function NavBar() {
                     textDecoration: 'none',
                     }}
                 >
-                    LOGARDO
+                    React-Store
                 </Typography>
             </NavLink>
-            <div >
-                <Link to="/category/Futbol">Futbol</Link>
+            <div style={{display:'flex', justifyContent:'space-around', width:'50rem'}}>
+                <Link to="/category/Futbol" className='defLinks'>Futbol</Link>
                 <br />
-                <Link to="/category/Boxeo">Boxeo</Link>
+                <Link to="/category/Boxeo" className='defLinks'>Boxeo</Link>
                 <br />
-                <Link to="/Category/Karate">Karate</Link>
+                <Link to="/Category/Karate" className='defLinks'>Karate</Link>
                 <br />
-                <Link to="/Category/Featured">Destacado</Link>
+                <Link to="/Category/Featured" className='defLinks'>Destacado</Link>
                 <br />
             </div>
             <NavLink to='/cart'>

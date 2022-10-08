@@ -2,25 +2,29 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import {useCart} from '../../context/CartContex'
 import CartItem from './CartItem';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
 
 function Cart() {
     const {cart, cartTotal, clear} = useCart()
     const navegar = useNavigate()
 
     return ( 
-        <div>
+        <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
             {
                 ! cart.length
                 ? <div>
                     <h2>Carrito Vacio</h2>
-                    <button onClick={()=>navegar('/')}>Ir a comprar</button>
+                    <Button variant="contained" color='secondary' onClick={()=>navegar('/')}>Ir a comprar</Button>
                 </div>
-                : <div>
-                    <h2 style={{}}>Tu Carrito</h2>
+                : <div style={{textAlign:'center'}}>
+                    <h2>Tu Carrito</h2>
                         {cart.map((compra) => <CartItem key={compra.id} compra={compra}/>)}
-                    <span>Total a pagar : ${cartTotal()}</span><br />
-                    <button onClick={clear}>Vaciar Carrito</button>
-                    <button onClick={()=>navegar('/checkout')}>Terminar Compra</button>
+                    <div>Total a pagar : ${cartTotal()}</div><br />
+                    <Stack direction="row" spacing={2} padding={2} justifyContent={'center'}>
+                        <Button variant="contained" color="error" onClick={clear}>Vaciar Carrito</Button>
+                        <Button variant="contained" color="success" onClick={()=>navegar('/checkout')}>Terminar Compra</Button>
+                    </Stack>
                 </div>
             }
         </div>

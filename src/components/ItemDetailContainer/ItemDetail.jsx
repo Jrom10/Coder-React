@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContex';
 import ItemCount from '../ItemCount/ItemCount';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
+import SendIcon from '@mui/icons-material/Send';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
 
 export default function ItemDetail({ prod }) {
 
@@ -26,8 +30,10 @@ export default function ItemDetail({ prod }) {
             { !compra ?
             <ItemCount stock={stock} initial={1} onAdd={onAdd} count={count} setCount={setCount}/>
             : <div style={{display: 'flex', justifyContent:'space-around', alignItems:'center', paddingBot:'2rem'}}>
-                <button onClick={()=>navegar('/cart')}>Ir al carrito</button>
-                <button onClick={()=>navegar('/')}>Seguir comprando</button>
+                <Stack direction='row' spacing={2} paddingBottom={3}>
+                    <Button variant='contained' endIcon={<ShoppingCartCheckoutIcon/>} onClick={()=>navegar('/cart')}>Ir al carrito</Button>
+                    <Button variant='contained' endIcon={<SendIcon/>} onClick={()=>navegar('/')}>Seguir comprando</Button>
+                </Stack>
             </div>
             }
         </div>

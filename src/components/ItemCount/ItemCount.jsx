@@ -1,3 +1,8 @@
+import React from 'react';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+
+
 
 export default function ItemCount ({initial, stock, onAdd, count, setCount}) {
 
@@ -15,12 +20,14 @@ export default function ItemCount ({initial, stock, onAdd, count, setCount}) {
 
     return (
     <>
-    <div>
-        <button className='btn btn-success' onClick={restar}>-</button>
-        <span  className='btn btn-light'>{count}</span>
-        <button  className='btn btn-danger'onClick={sumar}>+</button>
-    </div>
-        <button  className='btn btn-primary m-3'onClick={()=>onAdd(count)}>comprar</button>
+    <Stack>
+        <div style={{margin:'5px', textAlign:'center'}}>
+            <Button variant="outlined" color="error" onClick={restar}>-</Button>
+            <span  style={{margin:'15px'}}>{count}</span>
+            <Button variant="outlined" color="success" onClick={sumar}>+</Button>
+        </div>
+        <Button style={{margin:'5px'}} variant='contained' onClick={()=>onAdd(count)}>comprar</Button>
+    </Stack>
     </>
     )
 }

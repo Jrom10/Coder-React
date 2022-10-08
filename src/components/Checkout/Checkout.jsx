@@ -3,6 +3,7 @@ import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import React, { useState} from 'react';
 import {useCart} from '../../context/CartContex';
 import { useNavigate } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 
 function Checkout() {
@@ -44,19 +45,19 @@ function Checkout() {
     }
 
     if(loader){
-        return <p>Procesando Comprita</p>
+        return <div style={{display:'flex', justifyContent:'center'}}><p className='loader'></p></div> 
     }
     return ( 
-        <div>
+        <div style={{textAlign:'center'}}>
             {!orderId
             ?<div>
                 <h2>Terminar Compra</h2>
                 <h4>Complete los campos</h4>
-                <form style={{display:'flex', justifyContent:'center', alignItems:'center', flexDirection:'column', padding:'2rem'}} onSubmit={finalizarCompra}>
+                <form style={{display:'flex', justifyContent:'space-around', alignItems:'center', flexDirection:'column', height:'10rem'}} onSubmit={finalizarCompra}>
                     <input type="text" placeholder='Nombre y Apellido' name='name' onChange={datosComprador}/>
                     <input type="number" placeholder='444555666' name='phone' onChange={datosComprador}/>
                     <input type="email" placeholder='lalaland@gmail.com' name='email' onChange={datosComprador}/>
-                    <button type='submit'>Finalizar compra</button>
+                    <Button variant="contained" color="success" type='submit'>Finalizar compra</Button>
                     {mensaje && <p style={{color:'red'}}>Complete todos los campos</p>}
                 </form>
             </div>
@@ -64,7 +65,7 @@ function Checkout() {
             <div>
                 <h2>Muchas gracias</h2>
                 <h4>Su numero de orden es: {orderId}</h4>
-                <button onClick={()=>navigate('/')}>Volver</button>
+                <Button variant="contained" color="success" onClick={()=>navigate('/')}>Volver</Button>
             </div>}
         </div>
     )

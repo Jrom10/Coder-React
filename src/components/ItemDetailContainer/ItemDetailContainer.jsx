@@ -27,7 +27,11 @@ export default function ItemDetailContainer() {
     
     return (
         <div>
-            {loading ? <p>Cargando...</p> : <ItemDetail prod={prod}/>}
+            {loading 
+            ? <div style={{display:'flex', justifyContent:'center'}}>
+                <p className='loader'></p>
+            </div> 
+            : <ItemDetail prod={prod}/>}
         </div> 
     )
 }

@@ -9,6 +9,29 @@
   flex-wrap: wrap;
 }
 
+.defLinks {
+  text-decoration: none;
+  color: white
+}
+
+.loader {
+  border: 10px solid #f3f3f3;
+  border-top: 16px solid rgb(0, 0, 138);
+  border-right: 16px solid rgba(255, 255, 0, 0.5);
+  border-bottom: 16px solid darkblue;
+  border-left: 16px solid rgba(255, 255, 0, 0.5);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
 .links{
   color: white;
   text-decoration: none;

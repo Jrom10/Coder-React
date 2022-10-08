@@ -1,9 +1,15 @@
-import {createContext, useContext, useState } from "react";
+import {createContext, useContext, useEffect, useState } from "react";
 
 export const CartContext = createContext()
+const prodFromLocalStorage = JSON.parse(localStorage.getItem('cartLs') || '[]')
+
 
 export const CartProvider = ({children}) => {
-    const [cart, setCart] = useState([])
+    const [cart, setCart] = useState(prodFromLocalStorage)
+
+    useEffect(() => {
+        localStorage.setItem('cartLs',JSON.stringify(cart))
+    },[cart])
 
     const clear = () =>{
         setCart([])
@@ -13,9 +19,14 @@ export const CartProvider = ({children}) => {
         const existsInCart = cart.find((prod) => prod.id === item.id)
         if(existsInCart){
             const carritoActualizado = cart.map((prod) =>{
-                if(prod.id === item.id){
-                    return {...prod, quantity:prod.quantity + item.quantity}
+                if(item.quantity+prod.quantity<=item.stock){
+                    if(prod.id === item.id){
+                        return {...prod, quantity:prod.quantity + item.quantity}
+                    }else{
+                        return prod
+                    }
                 }else{
+                    alert("no hay stock")
                     return prod
                 }
             })

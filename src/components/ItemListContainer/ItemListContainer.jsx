@@ -29,7 +29,11 @@ export default function ItemListContainer() {
     
         return (
         <div>
-            {loading ? <p>Loading...</p>:<ItemList productList={productList}/>}
+            {loading 
+            ? <div style={{display:'flex', justifyContent:'center'}}>
+                <p className='loader'></p>
+            </div> 
+            :<div style={{display:'flex', alignItems:'center', justifyContent:'center'}}> <ItemList productList={productList}/></div>}             
         </div>
         );
     }
