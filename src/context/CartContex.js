@@ -1,3 +1,4 @@
+import React from 'react';
 import {createContext, useContext, useEffect, useState } from "react";
 
 export const CartContext = createContext()
@@ -28,7 +29,7 @@ export const CartProvider = ({children}) => {
                 }else{
                     alert("no hay stock")
                     return prod
-                }
+            }
             })
             setCart(carritoActualizado)
         } else {

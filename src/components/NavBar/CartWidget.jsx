@@ -18,7 +18,7 @@ export default function CartWidget() {
     const {cartQuantity} = useCart()
     return (
         <IconButton aria-label="cart">
-        <StyledBadge badgeContent={cartQuantity()} color="secondary">
+        <StyledBadge badgeContent={cartQuantity()} color="primary">
             <ShoppingCartIcon/>
         </StyledBadge>
         </IconButton>

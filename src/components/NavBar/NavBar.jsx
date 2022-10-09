@@ -3,7 +3,6 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
 import {Link, NavLink} from "react-router-dom";
 
@@ -13,7 +12,7 @@ export default function NavBar() {
         <AppBar position="static">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
-            <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+            <img src='https://img.icons8.com/clouds/344/react.png' alt='React Logo' style={{width:'5rem'}}/>
             <NavLink to='/' className='links'>
                 <Typography
                     variant="h6"
@@ -28,7 +27,7 @@ export default function NavBar() {
                     textDecoration: 'none',
                     }}
                 >
-                    React-Store
+                    ReAcT-StOrE
                 </Typography>
             </NavLink>
             <div style={{display:'flex', justifyContent:'space-around', width:'50rem'}}>

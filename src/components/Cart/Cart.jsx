@@ -13,9 +13,9 @@ function Cart() {
         <div style={{display:'flex', justifyContent:'center', alignItems:'center'}}>
             {
                 ! cart.length
-                ? <div>
+                ? <div style={{paddingBottom:'2rem'}}>
                     <h2>Carrito Vacio</h2>
-                    <Button variant="contained" color='secondary' onClick={()=>navegar('/')}>Ir a comprar</Button>
+                    <Button variant="contained" color='primary' onClick={()=>navegar('/')}>Ir a comprar</Button>
                 </div>
                 : <div style={{textAlign:'center'}}>
                     <h2>Tu Carrito</h2>

@@ -8,12 +8,11 @@ import Cart from "./components/Cart/Cart";
 import {CartProvider} from "./context/CartContex" 
 import Checkout from "./components/Checkout/Checkout";
 import { createTheme, ThemeProvider} from '@mui/material/styles';
-import { blueGrey } from '@mui/material/colors';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: blueGrey[500],
+      main: '#747249',
     },
   },
 });
