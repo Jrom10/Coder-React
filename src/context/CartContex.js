@@ -1,5 +1,7 @@
 import React from 'react';
 import {createContext, useContext, useEffect, useState } from "react";
+import Swal from 'sweetalert2'
+
 
 export const CartContext = createContext()
 const prodFromLocalStorage = JSON.parse(localStorage.getItem('cartLs') || '[]')
@@ -27,7 +29,13 @@ export const CartProvider = ({children}) => {
                         return prod
                     }
                 }else{
-                    alert("no hay stock")
+                    Swal.fire({
+                        title: 'Oops...',
+                        text:'Stock Insuficiente',
+                        width: '20rem',
+                        confirmButtonColor: '#61481C',
+                        color:'black'
+                    })
                     return prod
             }
             })

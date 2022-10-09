@@ -16,8 +16,8 @@
 
 .loader {
   border: 15px solid #f3f3f3;
-  border-top: 15px solid rgb(55, 66, 5);
-  border-bottom: 15px solid rgb(55, 66, 5);
+  border-top: 15px solid #374205;
+  border-bottom: 15px solid #374205;
   border-radius: 50%;
   width: 50px;
   height: 50px;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-
+import Swal from 'sweetalert2'
 
 export default function ItemCount ({initial, stock, onAdd, count, setCount}) {
 
