@@ -12,8 +12,7 @@
 
 ## Deploy
 
-Check out a live version of the site, hosted on Netlify
-
+Check out a live version of the site. [https://coder-react-6f3b9.web.app](https://coder-react-6f3b9.web.app)
 
 <hr/>
 
