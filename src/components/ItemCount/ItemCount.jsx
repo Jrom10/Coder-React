@@ -1,7 +1,6 @@
 import React from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Swal from 'sweetalert2'
 
 export default function ItemCount ({initial, stock, onAdd, count, setCount}) {
 
@@ -25,7 +24,7 @@ export default function ItemCount ({initial, stock, onAdd, count, setCount}) {
             <span  style={{margin:'15px'}}>{count}</span>
             <Button variant="outlined" color="success" onClick={sumar}>+</Button>
         </div>
-        <Button style={{margin:'5px'}} variant='contained' onClick={()=>onAdd(count)}>comprar</Button>
+        <Button style={{margin:'5px'}} variant='contained' onClick={()=>onAdd(count)}>Agregar al carrito</Button>
     </Stack>
     </>
     )

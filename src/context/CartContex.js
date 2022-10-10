@@ -26,6 +26,14 @@ export const CartProvider = ({children}) => {
                     if(prod.id === item.id){
                         return {...prod, quantity:prod.quantity + item.quantity}
                     }else{
+                        Swal.fire({
+                            title: 'Producto Agregado',
+                            timer:'1000',
+                            icon: 'success',
+                            width: '25rem',
+                            showConfirmButton: false,
+                            color:'black'
+                        })
                         return prod
                     }
                 }else{
@@ -41,6 +49,14 @@ export const CartProvider = ({children}) => {
             })
             setCart(carritoActualizado)
         } else {
+            Swal.fire({
+                title: 'Producto Agregado',
+                timer:'1000',
+                icon: 'success',
+                width: '25rem',
+                showConfirmButton: false,
+                color:'black'
+            })
             setCart([...cart,item])
         }
     }

@@ -10,7 +10,7 @@ export default function Item ({product}) {
     const navegar = useNavigate()
 
     return (
-        <div className='cardContainer' style={{width:"20rem", margin:".5rem"}}>
+        <div className='cardContainer' style={{width:"20rem", margin:".5rem", height:'25rem'}}>
             <div style={{textAlign:"center", paddingBottom:"3rem"}}>
                 <p style={{fontSize:"20px", fontWeight:"bold",fontFamily:"monospace"}}>{name}</p>
                 <img style={{height:"10rem", width:"10rem"}} src={product.img} alt={product.name} />

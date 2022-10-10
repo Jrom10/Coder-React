@@ -53,7 +53,7 @@ function Checkout() {
             ?<div>
                 <h2>Terminar Compra</h2>
                 <h4>Complete los campos</h4>
-                <form style={{display:'flex', justifyContent:'space-around', alignItems:'center', flexDirection:'column', height:'10rem'}} onSubmit={finalizarCompra}>
+                <form style={{display:'flex', justifyContent:'space-evenly', alignItems:'center', flexDirection:'column', height:'15rem'}} onSubmit={finalizarCompra}>
                     <input type="text" placeholder='Nombre y Apellido' name='name' onChange={datosComprador}/>
                     <input type="number" placeholder='11 89752246' name='phone' onChange={datosComprador}/>
                     <input type="email" placeholder='React.Coder@gmail.com' name='email' onChange={datosComprador}/>
